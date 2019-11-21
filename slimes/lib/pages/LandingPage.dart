@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:slimes/pages/CombatPage.dart';
 
 //local imports
-import './CharacterSelectionPage.dart';
+import './CombatPage.dart';
 
 class LandingPage extends StatelessWidget {
   @override
@@ -9,7 +10,7 @@ class LandingPage extends StatelessWidget {
     return new Material(
       color: Colors.green[300],
       child: new InkWell(
-        onTap: () => Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => new CharacterSelectionPage())),
+        onTap: () => Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => new CombatPage())),
         child: new Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
