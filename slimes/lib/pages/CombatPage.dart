@@ -42,6 +42,7 @@ class CombatPageState extends State<CombatPage> {
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.grey[800],
           items: itemBar,
           ),  
       ),

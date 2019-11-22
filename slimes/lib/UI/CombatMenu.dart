@@ -5,6 +5,10 @@ import './CombatOptionTile.dart';
 class CombatMenu extends StatelessWidget {
   
   //! TODO vars needed
+  // * enemy list (2d list, sorted by room in current dungeon)
+  // * player team (new list created from existing roster
+  // *  this is done so that we can adjust health as needed)
+  // * dungeon info (loc, rooms, art)
 
   //const CombatMenu({});
 
@@ -24,7 +28,8 @@ class CombatMenu extends StatelessWidget {
               color: Colors.grey[500],
               padding: EdgeInsets.all(10),
               alignment: Alignment.center,
-              child: Text('selected enemy health'),
+              //! TODO impliment enemy name and overlay over dynamic health bar
+              child: Text('selected enemy name + health'),
             ),
           ),
           Expanded(
