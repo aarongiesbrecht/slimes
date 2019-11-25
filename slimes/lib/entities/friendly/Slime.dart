@@ -18,6 +18,4 @@ class Slime {
   //init function
   Slime(this.element, this.type, this.health, this.movesDamage, this.movesName)
 
-
-
 }

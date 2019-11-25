@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './CharacterTile.dart';
+
 class CombatMenuTile extends StatelessWidget {
   
   final String optionName;
@@ -14,10 +16,8 @@ class CombatMenuTile extends StatelessWidget {
       child: new GestureDetector(
         onTap: () => onTap(),
         child:  Container(
-          child: Center(
-            child: Text(optionName),
-            //! TODO: add styling
-          ),
+          //TODO will require characer values to be passed in
+          child: new CharacterTile(),
         ),
       ),
     );

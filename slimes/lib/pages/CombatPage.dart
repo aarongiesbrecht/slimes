@@ -25,7 +25,7 @@ class CombatPageState extends State<CombatPage> {
         body: Column(
           children: <Widget>[
             Expanded(
-              //! TODO this should be a custom game window item
+              //TODO this should be a custom game window item
               child: Center(
                 child: Container(
                   child: Text('game window'),

@@ -12,8 +12,8 @@ class CombatMenu extends StatelessWidget {
 
   //const CombatMenu({});
 
-  void onTap() {
-    print('temp call');
+  void onTap(int index) {
+    print('tap registered on index: $index');
   }
 
   @override
@@ -28,7 +28,7 @@ class CombatMenu extends StatelessWidget {
               color: Colors.grey[500],
               padding: EdgeInsets.all(10),
               alignment: Alignment.center,
-              //! TODO impliment enemy name and overlay over dynamic health bar
+              //TODO impliment enemy name and overlay over dynamic health bar
               child: Text('selected enemy name + health'),
             ),
           ),
@@ -41,12 +41,12 @@ class CombatMenu extends StatelessWidget {
               crossAxisCount: 2,
               childAspectRatio: 3.1,
               children: <Widget>[
-                new CombatMenuTile('one', onTap),
-                new CombatMenuTile('two', onTap),
-                new CombatMenuTile('three', onTap),
-                new CombatMenuTile('four', onTap),
-                new CombatMenuTile('five', onTap),
-                new CombatMenuTile('six', onTap),
+                new CombatMenuTile('one', () => onTap(1)),
+                new CombatMenuTile('two', () => onTap(2)),
+                new CombatMenuTile('three', () => onTap(3)),
+                new CombatMenuTile('four', () => onTap(4)),
+                new CombatMenuTile('five', () => onTap(5)),
+                new CombatMenuTile('six', () => onTap(6)),
               ],
             ),
           ),
