@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import './CombatOptionTile.dart';
 import '../utils/Move.dart';
 import '../entities/friendly/Slime.dart';
+import '../UI/SmallHealthBar.dart';
 
 class CombatMenu extends StatelessWidget {
   
