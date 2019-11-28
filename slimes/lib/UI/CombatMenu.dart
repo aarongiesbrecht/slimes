@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import './CombatOptionTile.dart';
+import '../utils/Move.dart';
+import '../entities/friendly/Slime.dart';
 
 class CombatMenu extends StatelessWidget {
   
@@ -9,7 +11,9 @@ class CombatMenu extends StatelessWidget {
   //* enemy list
   //* dungeon info (loc, rooms, enemy split)
 
-  //const CombatMenu({});
+  //! remove !
+  // these are temporary classes functioning as placeholder in order
+  // to test the menus functions more realistically
 
   void onTap(int index) {
     print('tap registered on index: $index');
