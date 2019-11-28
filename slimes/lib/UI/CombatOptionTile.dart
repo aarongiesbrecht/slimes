@@ -17,7 +17,7 @@ class CombatMenuTile extends StatelessWidget {
         onTap: () => onTap(),
         child:  Container(
           //TODO will require characer values to be passed in
-          child: new CharacterTile(),
+          child: CharacterTile(),
         ),
       ),
     );

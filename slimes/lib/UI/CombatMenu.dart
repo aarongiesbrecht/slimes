@@ -5,10 +5,9 @@ import './CombatOptionTile.dart';
 class CombatMenu extends StatelessWidget {
   
   //! TODO vars needed
-  // * enemy list (2d list, sorted by room in current dungeon)
-  // * player team (new list created from existing roster
-  // *  this is done so that we can adjust health as needed)
-  // * dungeon info (loc, rooms, art)
+  //* char list
+  //* enemy list
+  //* dungeon info (loc, rooms, enemy split)
 
   //const CombatMenu({});
 

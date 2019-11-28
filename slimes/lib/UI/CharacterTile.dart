@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './SmallHealthBar.dart';
+
 class CharacterTile extends StatefulWidget {
   CharacterTile();
 
@@ -17,10 +19,32 @@ class _CharacterTileState extends State<CharacterTile> {
         child: Container(
           padding: EdgeInsets.all(10),
           color: Colors.grey,
-          child: Row(
+          child: Stack(
             children: <Widget>[
-              
-            ],
+              FractionallySizedBox(
+                widthFactor: 0.3,
+                heightFactor: 1,
+                alignment: Alignment.centerLeft,
+                child: Container(
+                  child: Text('char\navatar'),
+                  color: Colors.blue,
+                ),
+              ),  
+              Container(
+                alignment: Alignment.topRight,
+                child: Text('char name'),
+              ),
+              Container(
+                alignment: Alignment.bottomRight,
+                child: FractionallySizedBox(
+                  widthFactor: .6,
+                  heightFactor: .3,
+                  child: Container(
+                    child: SmallHealthBar(0.7)
+                  ),
+                ),
+              ),
+            ]
           ),
         ),
       ),
@@ -29,7 +53,7 @@ class _CharacterTileState extends State<CharacterTile> {
 }
 
 
-// old column
+// old row
 
 // Expanded(
 //   child: FractionallySizedBox(
