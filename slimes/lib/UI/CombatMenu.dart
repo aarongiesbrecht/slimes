@@ -41,7 +41,9 @@ class CombatMenuState extends State<CombatMenu> {
 
   //local ontap method
   void _onTap(int index) {
-
+    setState(() {
+      chars[index].damage(1);
+    });
   }
 
   @override
