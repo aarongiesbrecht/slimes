@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 
 import './SmallHealthBar.dart';
 
-class CharacterTile extends StatefulWidget {
-  CharacterTile();
 
-  @override
-  _CharacterTileState createState() => _CharacterTileState();
-}
+class CharacterTile extends StatelessWidget {
 
-class _CharacterTileState extends State<CharacterTile> {
+  final double _health;
+
+  const CharacterTile(@required this._health);
+
   @override
   Widget build(BuildContext context) {
     return new Material(
@@ -40,7 +39,7 @@ class _CharacterTileState extends State<CharacterTile> {
                   widthFactor: .6,
                   heightFactor: .3,
                   child: Container(
-                    child: SmallHealthBar(0.7)
+                    child: SmallHealthBar(_health),
                   ),
                 ),
               ),

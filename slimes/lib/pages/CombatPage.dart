@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 
 import '../UI/CombatMenu.dart';
+import '../utils/Move.dart';
+import '../entities/friendly/Slime.dart';
 
 class CombatPage extends StatefulWidget {
   @override
   State createState() => CombatPageState();
 }
 
+//navbar items
 List itemBar = <BottomNavigationBarItem>[
   BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('home')),
   BottomNavigationBarItem(icon: Icon(Icons.favorite), title: Text('items')),

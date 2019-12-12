@@ -6,21 +6,42 @@ import '../entities/friendly/Slime.dart';
 import '../UI/SmallHealthBar.dart';
 import '../UI/LargeHealthBar.dart';
 
-class CombatMenu extends StatelessWidget {
+class CombatMenu extends StatefulWidget {
   
   //! TODO vars needed
-  //* char list
   //* enemy list
   //* dungeon info (loc, rooms, enemy split)
-
-  //! remove !
-  // these are temporary classes functioning as placeholder in order
-  // to test the menus functions more realistically
-
+  //final List<Slime> chars;
   
+  CombatMenu();
+  @override
+  State createState() => CombatMenuState();
+}
 
-  void onTap(int index) {
-    print('tap registered on index: $index');
+class CombatMenuState extends State<CombatMenu> {
+
+//! temp character data !
+  static List<Move> moves = [
+    new Move('_name0', 10),
+    new Move('_name1', 10),
+    new Move('_name2', 10),
+    new Move('_name3', 10),
+    new Move('_name4', 10),
+    new Move('_name5', 10),
+  ];
+  List<Slime> chars = [
+    new Slime('fire', 'anima', 50, moves),
+    new Slime('fire', 'anima', 60, moves),
+    new Slime('fire', 'anima', 30, moves),
+    new Slime('fire', 'anima', 70, moves),
+    new Slime('fire', 'anima', 20, moves),
+    new Slime('fire', 'anima', 50, moves),
+  ];
+//!!
+
+  //local ontap method
+  void _onTap(int index) {
+
   }
 
   @override
@@ -52,12 +73,12 @@ class CombatMenu extends StatelessWidget {
               crossAxisCount: 2,
               childAspectRatio: 3.1,
               children: <Widget>[
-                new CombatMenuTile('one', () => onTap(1)),
-                new CombatMenuTile('two', () => onTap(2)),
-                new CombatMenuTile('three', () => onTap(3)),
-                new CombatMenuTile('four', () => onTap(4)),
-                new CombatMenuTile('five', () => onTap(5)),
-                new CombatMenuTile('six', () => onTap(6)),
+                new CombatMenuTile('one', () => _onTap(0), true, chars[0]),
+                new CombatMenuTile('two', () => _onTap(1), true, chars[1]),
+                new CombatMenuTile('three', () => _onTap(2), false, chars[2]),
+                new CombatMenuTile('four', () => _onTap(3), true, chars[3]),
+                new CombatMenuTile('five', () => _onTap(4), false, chars[4]),
+                new CombatMenuTile('six', () => _onTap(5), true, chars[5]),
               ],
             ),
           ),
