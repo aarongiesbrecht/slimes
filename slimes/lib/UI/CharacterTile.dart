@@ -9,15 +9,20 @@ class CharacterTile extends StatelessWidget {
 
   const CharacterTile(@required this._health);
 
+  //vars depend based on targets current life
+  static Color livingBG = Colors.grey[500];
+  static Color deadBG = Colors.grey[700];
+
+
   @override
   Widget build(BuildContext context) {
     return new Material(
       child: Container(
         padding: EdgeInsets.all(5),
-        color: Colors.grey[700],
+        color: Colors.grey[800],
         child: Container(
           padding: EdgeInsets.all(10),
-          color: Colors.grey,
+          color: _health>0 ? livingBG : deadBG,
           child: Stack(
             children: <Widget>[
               FractionallySizedBox(

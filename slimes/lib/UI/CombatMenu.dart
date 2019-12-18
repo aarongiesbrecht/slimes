@@ -42,7 +42,7 @@ class CombatMenuState extends State<CombatMenu> {
   //local ontap method
   void _onTap(int index) {
     setState(() {
-      chars[index].damage(1);
+      chars[index].damage(10);
     });
   }
 
@@ -77,9 +77,9 @@ class CombatMenuState extends State<CombatMenu> {
               children: <Widget>[
                 new CombatMenuTile('one', () => _onTap(0), true, chars[0]),
                 new CombatMenuTile('two', () => _onTap(1), true, chars[1]),
-                new CombatMenuTile('three', () => _onTap(2), false, chars[2]),
+                new CombatMenuTile('three', () => _onTap(2), true, chars[2]),
                 new CombatMenuTile('four', () => _onTap(3), true, chars[3]),
-                new CombatMenuTile('five', () => _onTap(4), false, chars[4]),
+                new CombatMenuTile('five', () => _onTap(4), true, chars[4]),
                 new CombatMenuTile('six', () => _onTap(5), true, chars[5]),
               ],
             ),
