@@ -31,7 +31,7 @@ class MoveTile extends StatelessWidget {
               //!move points
               Container(
                 alignment: Alignment.bottomRight,
-                child: Text('move cost'),
+                child: Text('move cost: TODO'),
               ),
             ],
           ),

@@ -43,7 +43,7 @@ class CombatMenuTileState extends State<CombatMenuTile> {
         child: new GestureDetector(
           onTap: () => widget._onTap(),
           child: Container(
-            child: MoveTile(widget._char.move(0).name, widget._char.move(0).damage),
+            child: MoveTile(widget._char.move(widget._selectedMove).name, widget._char.move(widget._selectedMove).damage),
           ),
         ),
       ),
