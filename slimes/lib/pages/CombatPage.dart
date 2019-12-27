@@ -11,21 +11,22 @@ class CombatPage extends StatefulWidget {
 
 //! temp character data !
 List<Move> moves = [
-  new Move('_name0', 10),
-  new Move('_name1', 10),
-  new Move('_name2', 10),
-  new Move('_name3', 10),
-  new Move('_name4', 10),
-  new Move('_name5', 10),
+  new Move('move_0', 10),
+  new Move('move_1', 10),
+  new Move('move_2', 10),
+  new Move('move_3', 10),
+  new Move('move_4', 10),
+  new Move('move_5', 10),
 ];
 List<Slime> chars = [
-  new Slime('fire', 'anima', 50, moves),
-  new Slime('fire', 'anima', 60, moves),
-  new Slime('fire', 'anima', 30, moves),
-  new Slime('fire', 'anima', 70, moves),
-  new Slime('fire', 'anima', 20, moves),
-  new Slime('fire', 'anima', 50, moves),
+  new Slime('steve', 'fire', 'anima', 50, moves),
+  new Slime('ciri', 'water', 'anima', 60, moves),
+  new Slime('kevin', 'grass', 'anima', 30, moves),
+  new Slime('eris', 'lightning', 'anima', 70, moves),
+  new Slime('shaxx', 'light', 'anima', 20, moves),
+  new Slime('sagira', 'dark', 'anima', 50, moves),
 ];
+Slime tempHostile = new Slime('cheese', 'fire', 'gaurdian', 1500, moves);
 //!!
 
 //navbar items
@@ -57,7 +58,7 @@ class CombatPageState extends State<CombatPage> {
             Expanded(
               child: Center(
                 child: Container(
-                  child: CombatMenu(chars),
+                  child: CombatMenu(chars, tempHostile),
                 ),
               ),
             ),

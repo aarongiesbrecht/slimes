@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:slimes/UI/MoveTile.dart';
 
 import './CharacterTile.dart';
 import '../entities/friendly/Slime.dart';
+import '../utils/Move.dart';
 
 class CombatMenuTile extends StatefulWidget {
   
   final String _optionName;
   final VoidCallback _onTap;
   final bool _tileType;
+  final int _selectedMove;
   final Slime _char;
+  final List <Move> _moves;
 
-  const CombatMenuTile(this._optionName, this._onTap, this._tileType, this._char);
+  const CombatMenuTile(this._optionName, this._onTap, this._tileType, this._selectedMove, this._char, this._moves);
 
   @override
   State createState() => CombatMenuTileState();
@@ -28,7 +32,6 @@ class CombatMenuTileState extends State<CombatMenuTile> {
         child: new GestureDetector(
           onTap: () => widget._onTap(),
           child:  Container(
-            //TODO will require characer values to be passed in
             child: CharacterTile(widget._char.formattedHealth),
           ),
         ),
@@ -40,8 +43,7 @@ class CombatMenuTileState extends State<CombatMenuTile> {
         child: new GestureDetector(
           onTap: () => widget._onTap(),
           child: Container(
-            //TODO will require move data to be passed in, using temp for now
-
+            child: MoveTile(widget._char.move(0).name, widget._char.move(0).damage),
           ),
         ),
       ),

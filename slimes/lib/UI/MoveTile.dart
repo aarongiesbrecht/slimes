@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 
 class MoveTile extends StatelessWidget {
   
+  final String _name;
+  final int _dmg;
   
-  
-  const MoveTile();
+  const MoveTile(this._name, this._dmg);
 
   @override
   Widget build(BuildContext context) {
@@ -18,17 +19,17 @@ class MoveTile extends StatelessWidget {
           child: Stack(
             children: <Widget>[
               //!move name
-              FractionallySizedBox(
+              Container(
                 alignment: Alignment.topLeft,
-                child: Text('move name'),
+                child: Text(this._name),
               ),
               //!damage
-              FractionallySizedBox(
+              Container(
                 alignment: Alignment.topRight,
-                child: Text('damage'),
+                child: Text('damage: ${this._dmg}'),
               ),
               //!move points
-              FractionallySizedBox(
+              Container(
                 alignment: Alignment.bottomRight,
                 child: Text('move cost'),
               ),

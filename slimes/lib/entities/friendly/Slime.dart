@@ -11,6 +11,7 @@ import '../../utils/Move.dart';
 class Slime {
 
   // required data:
+  final String _name;
   final int _maxHealth;          // max available hp
   final String _type;            // anima, gaurdian, oracle, etc (determins stats)
   final String _element;         // grass, water, fire, etc
@@ -18,7 +19,7 @@ class Slime {
   int _currentHealth;            // dynamic health
 
   //init function
-  Slime(@required this._element, @required this._type, @required this._maxHealth, @required this._moves) {
+  Slime(@required this._name, @required this._element, @required this._type, @required this._maxHealth, @required this._moves) {
     _currentHealth = _maxHealth;  
   }
 

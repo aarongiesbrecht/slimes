@@ -12,18 +12,34 @@ class CombatMenu extends StatefulWidget {
   //* enemy list
   //* dungeon info (loc, rooms, enemy split)
   final List<Slime> chars;
+  final Slime _tmpEnemy;
   
-  CombatMenu(this.chars);
+  CombatMenu(this.chars, this._tmpEnemy);
   @override
   State createState() => CombatMenuState();
 }
 
 class CombatMenuState extends State<CombatMenu> {
 
+  //determines the move tile based on char
+  static int _selectedMove = 0;
+  //state controls whether menu shows chars or moves
+  //true == char selected tile type
+  static bool _selectedTile = true;
+
   //local ontap method
   void _onTap(int index) {
     setState(() {
-      widget.chars[index].damage(10);
+      _selectedMove = index;
+      //widget.chars[index].damage(10);   ref code for later
+      //swaps screen to selected chars moves.
+      if (_selectedTile) {
+        print('swapped all tiles to move data for char $index');
+        _selectedTile = false;
+      }else {
+        print('move used');
+        _selectedTile = true;
+      }
     });
   }
 
@@ -40,8 +56,8 @@ class CombatMenuState extends State<CombatMenu> {
                 color: Colors.grey[500],
                 padding: EdgeInsets.all(10),
                 alignment: Alignment.center,
-                //TODO impliment enemy name and overlay over dynamic health bar
-                child: LargeHealthBar(.6),
+                //TODO pass in enemy name data
+                child: LargeHealthBar(widget._tmpEnemy.formattedHealth),
                 //child: Text('test'),
               ),
             ),
@@ -56,12 +72,54 @@ class CombatMenuState extends State<CombatMenu> {
               crossAxisCount: 2,
               childAspectRatio: 3.1,
               children: <Widget>[
-                new CombatMenuTile('one', () => _onTap(0), true, widget.chars[0]),
-                new CombatMenuTile('two', () => _onTap(1), true, widget.chars[1]),
-                new CombatMenuTile('three', () => _onTap(2), true, widget.chars[2]),
-                new CombatMenuTile('four', () => _onTap(3), true, widget.chars[3]),
-                new CombatMenuTile('five', () => _onTap(4), true, widget.chars[4]),
-                new CombatMenuTile('six', () => _onTap(5), true, widget.chars[5]),
+                new CombatMenuTile('one', () => _onTap(0), _selectedTile, _selectedMove, widget.chars[0], <Move>[
+                  widget.chars[0].move(0),
+                  widget.chars[1].move(0),
+                  widget.chars[2].move(0),
+                  widget.chars[3].move(0),
+                  widget.chars[4].move(0),
+                  widget.chars[5].move(0),
+                ]),
+                new CombatMenuTile('two', () => _onTap(1), _selectedTile, _selectedMove, widget.chars[1], <Move>[
+                  widget.chars[0].move(1),
+                  widget.chars[1].move(1),
+                  widget.chars[2].move(1),
+                  widget.chars[3].move(1),
+                  widget.chars[4].move(1),
+                  widget.chars[5].move(1),
+                ]),
+                new CombatMenuTile('three', () => _onTap(2), _selectedTile, _selectedMove, widget.chars[2], <Move>[
+                  widget.chars[0].move(2),
+                  widget.chars[1].move(2),
+                  widget.chars[2].move(2),
+                  widget.chars[3].move(2),
+                  widget.chars[4].move(2),
+                  widget.chars[5].move(2),
+                ]),
+                new CombatMenuTile('four', () => _onTap(3), _selectedTile, _selectedMove, widget.chars[3], <Move>[
+                  widget.chars[0].move(3),
+                  widget.chars[1].move(3),
+                  widget.chars[2].move(3),
+                  widget.chars[3].move(3),
+                  widget.chars[4].move(3),
+                  widget.chars[5].move(3),
+                ]),
+                new CombatMenuTile('five', () => _onTap(4), _selectedTile, _selectedMove, widget.chars[4], <Move>[
+                  widget.chars[0].move(4),
+                  widget.chars[1].move(4),
+                  widget.chars[2].move(4),
+                  widget.chars[3].move(4),
+                  widget.chars[4].move(4),
+                  widget.chars[5].move(4),
+                ]),
+                new CombatMenuTile('six', () => _onTap(5), _selectedTile, _selectedMove, widget.chars[5], <Move>[
+                  widget.chars[0].move(5),
+                  widget.chars[1].move(5),
+                  widget.chars[2].move(5),
+                  widget.chars[3].move(5),
+                  widget.chars[4].move(5),
+                  widget.chars[5].move(5),
+                ]),
               ],
             ),
           ),
