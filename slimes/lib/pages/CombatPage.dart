@@ -12,11 +12,11 @@ class CombatPage extends StatefulWidget {
 //! temp character data !
 List<Move> moves = [
   new Move('move_0', 10),
-  new Move('move_1', 10),
-  new Move('move_2', 10),
-  new Move('move_3', 10),
-  new Move('move_4', 10),
-  new Move('move_5', 10),
+  new Move('move_1', 20),
+  new Move('move_2', 30),
+  new Move('move_3', 50),
+  new Move('move_4', 100),
+  new Move('move_5', 500),
 ];
 List<Slime> chars = [
   new Slime('steve', 'fire', 'anima', 50, moves),

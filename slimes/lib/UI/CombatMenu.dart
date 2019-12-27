@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:slimes/UI/CharacterTile.dart';
 
 import './CombatOptionTile.dart';
 import '../utils/Move.dart';
@@ -23,6 +24,7 @@ class CombatMenuState extends State<CombatMenu> {
 
   //determines the move tile based on char
   static int _selectedMove = 0;
+  static int _selectedChar = 0;
   //state controls whether menu shows chars or moves
   //true == char selected tile type
   static bool _selectedTile = true;
@@ -35,9 +37,13 @@ class CombatMenuState extends State<CombatMenu> {
       //swaps screen to selected chars moves.
       if (_selectedTile) {
         print('swapped all tiles to move data for char $index');
+        _selectedChar = index;
         _selectedTile = false;
       }else {
         print('move used');
+        widget._tmpEnemy.damage(widget.chars[_selectedChar].move(index).damage);
+        int _dmg = widget.chars[_selectedChar].move(index).damage;
+        print('$_dmg dealt');
         _selectedTile = true;
       }
     });
