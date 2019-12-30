@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:slimes/UI/CharacterTile.dart';
 
 import './CombatOptionTile.dart';
 import '../utils/Move.dart';
 import '../entities/friendly/Slime.dart';
-import '../UI/SmallHealthBar.dart';
 import '../UI/LargeHealthBar.dart';
 
 class CombatMenu extends StatefulWidget {
@@ -40,7 +38,6 @@ class CombatMenuState extends State<CombatMenu> {
         _selectedChar = index;
         _selectedTile = false;
       }else {
-        print('move used');
         widget._tmpEnemy.damage(widget.chars[_selectedChar].move(index).damage);
         int _dmg = widget.chars[_selectedChar].move(index).damage;
         print('$_dmg dealt');
