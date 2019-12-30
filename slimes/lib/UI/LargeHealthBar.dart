@@ -15,28 +15,53 @@ class _LargeHealthBarState extends State<LargeHealthBar> {
   Widget build(BuildContext context) {
     return new Material(
       color: Colors.grey[500],
-        child: Container(
-          decoration: BoxDecoration(
-              color: Colors.red[900],
+      child: Stack(
+        children: <Widget>[
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.grey[800],
               borderRadius: BorderRadius.all(
                 Radius.circular(5),
               ),
             ),
-          alignment: Alignment.centerLeft,
-          child: FractionallySizedBox(
-          heightFactor: 1,
-          widthFactor: widget.health,
-          child: Container(
+            alignment: Alignment.centerLeft,
+          ),
+          Container(
             decoration: BoxDecoration(
               color: Colors.red[600],
               borderRadius: BorderRadius.all(
                 Radius.circular(5),
               ),
             ),
-            child: Text('enemy name'),
-          ),      
-        ),
+            child: FractionallySizedBox(
+              heightFactor: 1,
+              widthFactor: widget.health,
+            ),
+          ),
+          Text('  enemy name')  
+        ],
       ),
     );
   }
 }
+
+// child: Container(
+//           decoration: BoxDecoration(
+//               color: Colors.red[900],
+//               borderRadius: BorderRadius.all(
+//                 Radius.circular(5),
+//               ),
+//             ),
+//           alignment: Alignment.centerLeft,
+//           child: FractionallySizedBox(
+//           heightFactor: 1,
+//           widthFactor: widget.health,
+//           child: Container(
+//             decoration: BoxDecoration(
+//               color: Colors.red[600],
+//               borderRadius: BorderRadius.all(
+//                 Radius.circular(5),
+//               ),
+//             ),
+//             child: Text('enemy name'),
+//           ),
