@@ -1,3 +1,13 @@
+//
+//* Main combat screen */
+//
+// this page is intended to house all data needed for an entire combat sequence.
+// it recieves the following from its parent page in order to do that"
+//    player team list (currently using temp data)
+//    dungeon room list (consists of each enemy team for current sequence,
+//      currently using temp data for single enemy)
+//
+
 import 'package:flutter/material.dart';
 
 import '../UI/CombatMenu.dart';

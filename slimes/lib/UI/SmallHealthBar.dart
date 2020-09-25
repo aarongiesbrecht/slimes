@@ -22,7 +22,7 @@ class _SmallHealthBarState extends State<SmallHealthBar> {
       color: widget._health>0 ? livingBG : deadBG,
         child: Container(
           decoration: BoxDecoration(
-              color: Colors.red[600],
+              color: Colors.grey[800],
               borderRadius: BorderRadius.all(
                 Radius.circular(5),
               ),

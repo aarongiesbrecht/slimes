@@ -1,3 +1,11 @@
+//
+//* Main Launch Page*
+//
+// intended to be the initial splash screen players see when launching the game
+// intended to redirect to the games main menu, currently directs directly into 
+// games main combat menu
+//
+
 import 'package:flutter/material.dart';
 import 'package:slimes/pages/CombatPage.dart';
 

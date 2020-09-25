@@ -1,3 +1,13 @@
+//
+//* main menu of combat page */
+//
+// combat menu is in charge of:
+//    player char tiles (including player moves)
+//    selected enemy data (to display health/name)
+//    handling player input to the combat menu tiles (passes data down
+//      to correct tile)
+//
+
 import 'package:flutter/material.dart';
 
 import './CombatOptionTile.dart';
